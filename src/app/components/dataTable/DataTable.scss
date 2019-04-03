@@ -1,0 +1,244 @@
+@import '../../../assets/scss/constants';
+// @import '../../../assets/scss/mixins';
+
+.type{
+    width:15px;
+    height:15px;
+}
+
+tr td{
+    .fa-ellipsis-h{
+        visibility: hidden;
+    }
+    .fa-angle-right{
+        visibility: hidden
+    }
+} 
+
+tr:hover{
+    .fa-ellipsis-h{
+        visibility: visible
+    }
+    .fa-angle-right{
+        visibility: visible
+    }
+}
+
+.paginate-border{
+   border: 0.0325rem solid #DCDCDC
+}
+
+%button-hover{
+    transition: all 0.2s ease-out 0s !important;
+    background: $brand-01;
+    border: medium none;
+    border-radius: 0;
+    // box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12), 0 0.1875rem 0.0625rem -0.125rem rgba(0, 0, 0, 0.2);
+    // @include shadowbox(0rem, 0.125rem, 0.125rem, 0rem);
+    color: $ui-01 !important;
+    margin: 0;
+}
+%paginate-button{
+    background-color: $brand-03 !important;
+    background: none;
+    border: none;
+    color: $text-01 !important;
+}
+.datatables{
+    font-size: 0.75rem;
+    .modelName{
+        font-size: 16px;
+        font-family: $font-bold;
+    }
+    .dataTables_paginate{
+        .paginate_button{
+            border: none;
+            &.current{
+                @extend %paginate-button;    
+                background-color: $brand-01 !important;
+                color: $ui-01 !important;
+                &:hover{
+                    @extend %paginate-button;    
+                    background-color: $brand-01 !important;
+                    color: $ui-01;
+            }
+            }
+            &:hover{
+                @extend %paginate-button;
+                background-color: lighten($brand-03, 20%) !important;
+            }
+            &:active{
+                @extend %paginate-button;
+                &:hover{
+                    background-color: $brand-03 !important;
+                }
+            }
+        }
+    }
+    .dataTables_wrapper {
+            width: 96%;
+            //margin-left: 2%;
+
+        .dataTables_filter{
+            float: none;
+            input {
+                 border: none;
+                 border-bottom: 0.0625rem solid $text-02;
+                width: 100%;
+                padding: 0.5rem 0rem 0.5rem 1.25rem; 
+                margin-left: 0rem;
+                &:focus{
+                    outline: none;
+                    border-bottom-color: $text-01;
+                }
+            }
+            label{
+                width: 100%;
+            }
+        }
+        .posSearch{
+            top: 10px;
+            // left: 4px;
+            font-size: 110%;
+            color: $text-02;
+        }
+        .dataTables_length {
+            margin-top: 0.625rem;
+            float: right;
+            select{
+                border: none;
+                border-bottom: 0.0625rem solid $text-01 !important;
+                outline: none;
+            }
+        }
+        div{
+            &.dt-button-collection{
+                padding: 0rem;
+                border-radius: 0rem;
+                text-align: left;
+                border: 0.0625rem solid $brand-01;
+                box-shadow: none;
+                top: 2rem !important;
+            }
+        }
+        button.dt-button{
+            background: transparent;
+            border: medium none;
+            border-radius: 0;
+            margin: 0;
+            color: $text-02 !important;
+            box-shadow: none;
+            font-size: 110%;
+            &.buttons-columnVisibility{
+                text-align: left;
+                box-shadow: none !important;
+                font-size: 0.75rem;
+                color: $text-01 !important;
+                &:hover{
+                    @extend %button-hover;
+                    background: $brand-02 !important;
+                    &:not(.disabled){
+                        @extend %button-hover;
+                    }
+                }
+                &.active{
+                    background: $brand-01;
+                    color: $ui-01 !important;
+                    &:hover{
+                        @extend %button-hover;
+                        background: $brand-02 !important;
+                        &:not(.disabled){
+                            @extend %button-hover;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                @extend %button-hover;
+                &:not(.disabled){
+                    @extend %button-hover;
+                }
+            }
+            &.active{
+                &:hover{
+                    @extend %button-hover;
+                    background: transparent !important;
+                    &:not(.disabled){
+                        @extend %button-hover;
+                    }
+                }
+            }
+            &:active{
+                @extend %button-hover;
+                &:not(.disabled){
+                    @extend %button-hover;
+                    box-shadow: none !important;
+                }
+                &:hover{
+                    @extend %button-hover;
+                    background: transparent !important;
+                    &:not(.disabled){
+                        @extend %button-hover;
+                    }
+                }
+            }
+        //     background: transparent;
+            .fa.fa-bars{
+                transform: rotate(90deg);
+            }
+        }
+    }
+    .dataTables_scrollBody {
+        border-bottom: 0.0625rem solid $ui-04 !important;
+    }
+    table{
+    &.dataTable{
+        border: 0.0625rem solid $ui-04;
+        border-top: none;
+        thead{
+            background-color: $brand-01;
+            color: $ui-01;
+            th{
+                // border-bottom: 0.0625rem solid $ui-04;
+                border-bottom: none;
+                // padding: 0.25rem 0.9375rem;
+                &.sorting {
+                    background-image: none !important;
+                }
+            }
+            .sorting_asc, .sorting_desc{
+                background-image: none !important;
+            }
+        }
+        tbody{
+            tr{
+                &:nth-of-type(even){
+                    background-color: $brand-03;
+                    // background-color: $brand3;
+                }
+                &:nth-of-type(odd){
+                    background-color: $ui-01;
+                    // background-color: $brand3;
+                }
+                &:hover {
+                    background-color: $ui-04;
+                }
+            }
+            td{
+                // border-top: 0.02125rem solid $ui-04;
+                border-top: none !important;
+                padding: 0.5rem 0.9375rem !important;
+            }
+        }
+    &.no-footer{
+        border-bottom: 0.0625rem solid $ui-04;
+    }
+    }
+    } 
+} 
+
+div{
+    &.dt-button-background{
+        width: 0 !important;
+    }
+}

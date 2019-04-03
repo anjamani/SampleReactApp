@@ -1,0 +1,34 @@
+
+//importing partials
+@import "constants";
+@import "mixins";
+
+
+
+.bg-dark{ background-color:  #3B3B3B; }
+.fixed-bottom{    
+    bottom: 0;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.h-15{
+    height:15%
+}
+.h-12{
+    height:12%
+}
+.h-85{
+    height:85%
+}
+.h-88{
+    height:88%
+}
+.h-75{
+    height:75%;
+}
+.h-10{
+    height:10%
+}
+

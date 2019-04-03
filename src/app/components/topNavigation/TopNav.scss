@@ -1,0 +1,11 @@
+.primary-tab{
+    a{
+        border-width:0 0 2px 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+    .active-nav{
+        border-color: #ffffff;
+        transition: ease all 2;
+    }
+}
